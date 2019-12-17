@@ -1,0 +1,21 @@
+<h1>Employee</h1>
+<div class="container">
+    <form class="form-group">
+        <div class="row">
+            <label for="firstName" class="form-control col-6">First Name</label>
+            <label name="firstName">{{employee.firstName}}</label>
+        </div>
+        <div class="row">
+            <label for="lastName" class="form-control col-6">Last Name</label>
+            <label name="lastName">{{employee.lastName}}</label>
+        </div>
+        <div class="row">
+            <label for="email" class="form-control col-6">Email</label>
+            <label name="email" type="email" class="form-control col-6" disabled="true">{{employee.email}}</label>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary col-6" (click)="router.navigate(['site/list'])">Back to List</button>
+            <div class="col-6"></div>
+        </div>
+    </form>
+</div>

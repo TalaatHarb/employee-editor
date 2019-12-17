@@ -1,0 +1,24 @@
+<div *ngIf="!auth.isLoggedIn()" class="container">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in to the editor</h2>
+        <div *ngIf="this.badcredintials" class="alert alert-danger" role="alert">Bad credentials</div>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username"
+                [(ngModel)]="username" autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" (click)="auth.login(username, password)">Sign in</button>
+    </form>
+</div>
+
+<div *ngIf="auth.isLoggedIn()" class="container">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">You are already logged in</h2>
+        
+        <button class="btn btn-lg btn-primary btn-block" (click)="auth.logout()">Log out</button>
+    </form>
+</div>

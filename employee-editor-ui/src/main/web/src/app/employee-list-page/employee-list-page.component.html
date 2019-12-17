@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Employee List</h1>
+    <h2 *ngIf="employees.length < 1">No Emplyees in the list</h2>
+    <table *ngIf="employees.length > 0" class="table table-striped table-hover table-bordered">
+        <caption>Employee Table</caption>
+        <thead>
+            <th id="firstNameHeader">First name</th>
+            <th id="lastNameHeader">Last name</th>
+            <th id="emailHeader">Email</th>
+            <th id="actionsHeader">Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of employees">
+                <td id="{{e.id}}_f">{{e.firstName}}</td>
+                <td id="{{e.id}}_l">{{e.lastName}}</td>
+                <td id="{{e.id}}_e">{{e.email}}</td>
+                <td id="{{e.id}}_a">
+                    <button class="btn btn-danger ml-2" (click)="delete(e)">Delete</button>
+                    <button class="btn btn-warning ml-2" (click)="edit(e)">Edit</button>
+                    <button class="btn btn-primary ml-2" (click)="view(e)">View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success" (click)="add()">Add Employee</button>
+</div>

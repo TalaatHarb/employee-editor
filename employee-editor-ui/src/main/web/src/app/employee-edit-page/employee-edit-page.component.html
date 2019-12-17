@@ -1,0 +1,23 @@
+<h1>Employee</h1>
+<div class="container">
+    <form class="form-group">
+        <div class="row">
+            <label for="firstName" class="form-control col-6">First Name</label>
+            <input name="firstName" type="text" class="form-control col-6" [(ngModel)]="employee.firstName" placeholder="First name">
+        </div>
+        <div class="row">
+            <label for="lastName" class="form-control col-6">Last Name</label>
+            <input name="lastName" type="text" class="form-control col-6" [(ngModel)]="employee.lastName" placeholder="Last name">
+        </div>
+        <div class="row">
+            <label for="email" class="form-control col-6">Email</label>
+            <input name="email" type="email" class="form-control col-6" [(ngModel)]="employee.email" placeholder="test@test.com">
+        </div>
+        <div class="row">
+            <button class="btn btn-primary col-6" (click)="router.navigate(['site/list'])">Back to List</button>
+            <button class="btn btn-success col-6" (click)="save()">Save</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="success" class="alert alert-success" role="alert">Save was successful</div>
+<div *ngIf="failure" class="alert alert-danger" role="alert">{{message}}</div>
