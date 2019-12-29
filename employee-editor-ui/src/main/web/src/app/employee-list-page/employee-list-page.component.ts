@@ -26,7 +26,7 @@ export class EmployeeListPageComponent implements OnInit {
       if (this.employees.length === 1) {
         this.employees = [];
       } else {
-        this.employees = this.employees.filter((value) => value === employee);
+        this.employees = this.employees.filter((value) => value !== employee);
       }
     },
       error => {
