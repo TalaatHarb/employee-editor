@@ -20,6 +20,9 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@babel/compat-data": "7.8.0",
+    "@babel/preset-env": "7.8.0",
+    "babel-loader": "8.1.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
@@ -48,5 +51,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "resolutions": {
+    "@babel/preset-env": "^7.8.0"
   }
 }
